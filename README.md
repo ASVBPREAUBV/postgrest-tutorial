@@ -42,12 +42,9 @@ The empty database is now running and exposing the public schema to the anonymou
         # automatically increment posts id
         CREATE UNIQUE INDEX post_id_uindex ON public.post (id);
         
-2. Create the Role anonymous
+2. Create the Role anonymous &  Grant anonymous access to our table
     
         CREATE ROLE anonymous;
-
-3. Grant anonymous access to our table
-    
         GRANT ALL ON TABLE post TO anonymous;
         GRANT ALL ON TABLE post_id_seq TO anonymous;
 
