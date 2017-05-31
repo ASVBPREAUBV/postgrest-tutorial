@@ -55,3 +55,7 @@ The empty database is now running and exposing the public schema to the anonymou
     
 ## Enable basic Auth by DB
 [follow the steps on the docs](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
+
+## Use psql to create data
+
+    psql --host=localhost --port=5432 --username=postgres
