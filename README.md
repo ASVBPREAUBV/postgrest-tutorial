@@ -55,4 +55,5 @@ The empty database is now running and exposing the public schema to the anonymou
 
 ## Use psql to create data
 
-    psql -f db/post_init.sql --host=localhost --port=5432 --username=postgres 
+    psql -f db/01_init_post.sql --host=localhost --port=5432 --username=postgres 
+    psql -f db/02_init_anonymous.sql --host=localhost --port=5432 --username=postgres 
