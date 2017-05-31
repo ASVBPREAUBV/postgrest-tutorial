@@ -54,8 +54,8 @@ The empty database is now running and exposing the public schema to the anonymou
 4. All done. you should be able to GET,POST,UPDATE,PATCH on localhost:3000/posts now
     
 ## Enable basic Auth by DB
-[follow the steps on the docs](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
+[Follow the steps on the docs here](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
 
 ## Use psql to create data
 
-    psql --host=localhost --port=5432 --username=postgres
+    psql -f db/post_init.sql --host=localhost --port=5432 --username=postgres 
