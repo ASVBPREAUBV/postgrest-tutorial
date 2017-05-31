@@ -2,3 +2,5 @@ node_modules
 npm-debug.log
 .tern-port
 logs/*.log
+.idea/
+
