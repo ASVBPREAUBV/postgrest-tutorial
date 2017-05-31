@@ -2,7 +2,8 @@
 PostgREST Doku:
 	https://postgrest.com/en/v0.4/admin.html
 
-This repo ist just a small personal project to remember postgrest configs.
+This repo is no real tutorial just to remember the initialisation process for my own configs.
+But i think if you are totally new to postgREST i might help.
 
 ##Initialisation
 1. Download bin/build or hombrew postgREST
@@ -13,7 +14,7 @@ This repo ist just a small personal project to remember postgrest configs.
 
         docker run --name postgres  -e POSTGRES_PASSWORD=db_admin_pw -e POSTGRES_DB=tutorial -d -p 5432:5432 postgres
 
-4. Start postgREST -> Should run on http://localhost:3000/
+4. Start postgREST -> Should run on http://localhost:3000/ but you should have no access
         
         ./postgrest sample.conf
 
@@ -26,5 +27,31 @@ This repo ist just a small personal project to remember postgrest configs.
 
 The empty database is now running and exposing the public schema to the anonymous user.
 
+## Starting with a simple model
+
+1. Create a sample table with anonymous access for our blog
+        
+        #Create the Table
+        CREATE TABLE public.post
+        (   
+            id SERIAL PRIMARY KEY NOT NULL,
+            created TIMESTAMP DEFAULT now() NOT NULL,
+            title TEXT,
+            content TEXT
+        );
+        # automatically increment posts id
+        CREATE UNIQUE INDEX post_id_uindex ON public.post (id);
+        
+2. Create the Role anonymous
+    
+        CREATE ROLE anonymous;
+
+3. Grant anonymous access to our table
+    
+        GRANT ALL ON TABLE post TO anonymous;
+        GRANT ALL ON TABLE post_id_seq TO anonymous;
+
+4. All done. you should be able to GET,POST,UPDATE,PATCH on localhost:3000/posts now
+    
 ## Enable basic Auth by DB
 [follow the steps on the docs](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
