@@ -12,7 +12,7 @@ But i think if you are totally new to postgREST i might help.
         ./progrest [args]
 3. Run postgresDB in a container (not recommended for production)
 
-        docker run --name postgres  -e POSTGRES_PASSWORD=db_admin_pw -e POSTGRES_DB=tutorial -d -p 5432:5432 postgres
+        docker run --name postgres  -e POSTGRES_PASSWORD=pw -e POSTGRES_DB=tutorial -d -p 5432:5432 postgres
 
 4. Start postgREST -> Should run on http://localhost:3000/ but you should have no access
         
@@ -48,7 +48,7 @@ The empty database is now running and exposing the public schema to the anonymou
         GRANT ALL ON TABLE post TO anonymous;
         GRANT ALL ON TABLE post_id_seq TO anonymous;
 
-4. All done. you should be able to GET,POST,UPDATE,PATCH on localhost:3000/posts now
+3. All done. you should be able to GET,POST,UPDATE,PATCH on localhost:3000/posts now
     
 ## Enable basic Auth by DB
 [Follow the steps on the docs here](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
@@ -57,3 +57,8 @@ The empty database is now running and exposing the public schema to the anonymou
 
     psql -f db/01_init_post.sql --host=localhost --port=5432 --username=postgres 
     psql -f db/02_init_anonymous.sql --host=localhost --port=5432 --username=postgres 
+
+### get postgREST bin for ubuntu
+    
+    wget "https://github.com/begriffs/postgrest/releases/download/v0.4.1.0/postgrest-0.4.1.0-ubuntu.tar.xz"
+    tar xf "postgrest-0.4.1.0-ubuntu.tar.xz"
