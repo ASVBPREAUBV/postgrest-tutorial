@@ -5,7 +5,7 @@ PostgREST Doku:
 This repo is no real tutorial just to remember the initialisation process for my own configs.
 But i think if you are totally new to postgREST i might help.
 
-##Initialisation
+## Initialisation
 1. Download bin/build or hombrew postgREST
 2. Put bin in $PATH or run locally with 
 
