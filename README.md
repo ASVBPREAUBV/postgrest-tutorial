@@ -15,9 +15,11 @@ This repo ist just a small personal project to remember postgrest configs.
 4. Start postgREST -> Should run on http://localhost:3000/
         
         ./postgrest sample.conf
-5. start swaggerUI
+
+5. Create a User anonymous in the DB
+6. start swaggerUI
      
         docker run -p 80:8080 swaggerapi/swagger-ui
 
-6. go to http://localhost/ an insert http://localhost:3000/ in swagger to load SwaggerConfig
+7. go to http://localhost/ an insert http://localhost:3000/ in swagger to load SwaggerConfig
 
