@@ -3,10 +3,10 @@ PostgREST Doku:
 	https://postgrest.com/en/v0.4/admin.html
 
 This repo is no real tutorial just to remember the initialisation process for my own configs.
-But i think if you are totally new to postgREST i might help.
+But it think if you are totally new to postgREST i might help.
 
 ## Initialisation
-1. Download bin/build or hombrew postgREST
+1. [Download](https://github.com/begriffs/postgrest/releases/tag/v0.4.1.0) bin or build or homebrew postgREST
 2. Put bin in $PATH or run locally with 
 
         ./progrest [args]
