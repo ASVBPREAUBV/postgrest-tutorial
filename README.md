@@ -12,7 +12,7 @@ But it think if you are totally new to postgREST i might help.
         ./progrest [args]
 3. Run postgresDB in a container (not recommended for production)
 
-        docker run --name postgres  -e POSTGRES_PASSWORD=db_admin_pw -e POSTGRES_DB=tutorial -d -p 5432:5432 postgres
+        docker run --name postgres  -e POSTGRES_PASSWORD=pw -e POSTGRES_DB=tutorial -d -p 5432:5432 postgres
 
 4. Start postgREST -> Should run on http://localhost:3000/ but you should have no access
         
