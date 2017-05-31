@@ -31,32 +31,16 @@ The empty database is now running and exposing the public schema to the anonymou
 
 1. Create a sample table with anonymous access for our blog
         
-        #Create the Table
-        CREATE TABLE public.post
-        (   
-            id SERIAL PRIMARY KEY NOT NULL,
-            created TIMESTAMP DEFAULT now() NOT NULL,
-            title TEXT,
-            content TEXT
-        );
-        # automatically increment posts id
-        CREATE UNIQUE INDEX post_id_uindex ON public.post (id);
+        psql -f db/01_init_post.sql --host=localhost --port=5432 --username=postgres 
         
 2. Create the Role anonymous &  Grant anonymous access to our table
     
-        CREATE ROLE anonymous;
-        GRANT ALL ON TABLE post TO anonymous;
-        GRANT ALL ON TABLE post_id_seq TO anonymous;
+        psql -f db/02_init_anonymous.sql --host=localhost --port=5432 --username=postgres
 
 3. All done. you should be able to GET,POST,UPDATE,PATCH on localhost:3000/posts now
     
 ## Enable basic Auth by DB
 [Follow the steps on the docs here](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
-
-## Use psql to create data
-
-    psql -f db/01_init_post.sql --host=localhost --port=5432 --username=postgres 
-    psql -f db/02_init_anonymous.sql --host=localhost --port=5432 --username=postgres 
 
 ### get postgREST bin for ubuntu
     
