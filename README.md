@@ -4,6 +4,7 @@ PostgREST Doku:
 
 This repo ist just a small personal project to remember postgrest configs.
 
+##Initialisation
 1. Download bin/build or hombrew postgREST
 2. Put bin in $PATH or run locally with 
 
@@ -23,3 +24,7 @@ This repo ist just a small personal project to remember postgrest configs.
 
 7. go to http://localhost/ an insert http://localhost:3000/ in swagger to load SwaggerConfig
 
+The empty database is now running and exposing the public schema to the anonymous user.
+
+## Enable basic Auth by DB
+[follow the steps on the docs](https://postgrest.com/en/v0.4/auth.html#sql-user-management)
