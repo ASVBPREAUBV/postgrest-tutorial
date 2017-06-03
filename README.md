@@ -1,9 +1,10 @@
 # PostgREST Tutorial
-PostgREST Doku:
-	https://postgrest.com/en/v0.4/admin.html
 
 This repo is no real tutorial just to remember the initialisation process for my own configs.
-But it think if you are totally new to postgREST i might help.
+If you are totally new to postgREST it might help.
+
+PostgREST Doku:
+	https://postgrest.com/en/v0.4/admin.html
 
 ## Initialisation
 1. [Download](https://github.com/begriffs/postgrest/releases/tag/v0.4.1.0) bin or build or homebrew postgREST
